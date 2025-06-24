@@ -1,0 +1,12 @@
+WebAPI is the main reason to make javascript asynchronous
+It is the api which has Access to all browser accessibilties
+
+Browser:-
+It is able to communicate with external server(fetch)
+It has a timer(set timeout)
+Access of the location,speaker,Blutooth, Notification(notification api),console(console.log),display,mic,camera
+It has its own local storage(like cookies...)
+It can Access to file system
+
+microtask queue(high priority):-fetch
+callback queue(low priority):-call back function

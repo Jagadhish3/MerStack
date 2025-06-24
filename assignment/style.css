@@ -1,0 +1,50 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+/* .navbar img{
+    height:;
+    margin-top: 0;
+} */
+#logo{
+    margin-left: 10%;
+    height: 20px;
+    margin-top: -3%;
+
+}
+
+#address{
+    width: 25%;
+    height:auto;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: -3%;
+
+}
+#login{
+    height: 80px;
+    margin-right: 20%;
+    margin-top: -1%;
+}
+
+/* #middle{
+    color: white;
+    font-size: 50px;
+    padding-left: 15%;
+    background-color: rgb(243, 228, 69);
+    height: 300px;
+    display: felx;
+    justify-content: center;
+    padding-top: 5%;
+    
+} */
+#bg{
+    align-items: center;
+}
+#title{
+    display: flex;
+    margin-top: -40%;
+}

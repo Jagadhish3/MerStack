@@ -1,0 +1,194 @@
+Industry-Oriented MERN Stack Development Training Program
+Duration: 28 Days | 5 Hours/Day
+Objective:
+To train participants in building full-stack web applications using the MERN stack (MongoDB, Express.js, React, Node.js), preparing them for industry roles as full-stack JavaScript developers.
+
+Program Overview
+Target Audience: Beginners to intermediate learners, IT professionals, or students aiming to become full-stack developers.
+Prerequisites: Basic programming knowledge (e.g., variables, loops, functions); familiarity with JavaScript is a plus.
+Mode: Instructor-led (online/offline), hands-on coding, and project-based learning.
+Tools: Node.js, MongoDB, Express.js, React, Git, VS Code, Postman, MongoDB Compass.
+
+Training Schedule
+Week 1: JavaScript Foundations and Backend Basics
+Day 1: Introduction to JavaScript and MERN Stack
+Overview of JavaScript and MERN Stack
+Setting up the Environment (Node.js, npm, VS Code)
+Writing and Running Your First JavaScript Program
+Hands-On: Simple Console Apps
+Practice: JavaScript Basics Exercises
+
+Day 2: JavaScript Essentials
+Variables, Data Types, and Operators
+Control Structures (if-else, loops)
+Functions, Scope, and Closures
+Hands-On: Build a Simple Calculator
+Practice: Solve Coding Challenges
+
+Day 3: JavaScript Advanced
+Arrays, Objects, and Destructuring
+ES6 Features: Arrow Functions, Promises, Async/Await
+Working with JSON
+Hands-On: Process Data with Array Methods
+Practice: Fetch Data with Promises
+
+Day 4: Node.js Basics
+Introduction to Node.js and Event-Driven Architecture
+Modules and npm (Package Management)
+File System Operations
+Hands-On: Build a File Reader App
+Practice: Create Custom Modules
+
+Day 5: Express.js Fundamentals
+Setting up Express.js
+Routing, Middleware, and HTTP Methods
+Serving Static Files
+Hands-On: Create a Simple Express Server
+Practice: Add Routes for a Mock API
+
+Day 6: MongoDB Basics
+Introduction to NoSQL and MongoDB
+Setting up MongoDB (Local/Atlas)
+CRUD Operations with MongoDB Shell
+Hands-On: Build a MongoDB Database
+Practice: Query and Update Data
+
+Day 7: Weekly Review and Mini Project
+Recap of Week 1 Concepts
+Debugging JavaScript and Node.js
+Mini Project: Build a REST API with Express.js and MongoDB
+Q&A and Peer Review
+
+Week 2: Backend Development and API Integration
+Day 8: Connecting MongoDB with Node.js
+Using Mongoose for MongoDB Integration
+Defining Schemas and Models
+Performing CRUD Operations
+Hands-On: Build a User Database
+Practice: Add Validation
+Day 9: Advanced Express.js
+Error Handling and Validation
+Environment Variables and Configuration
+RESTful API Design Principles
+Hands-On: Enhance an API with Middleware
+Practice: Secure Routes
+Day 10: Authentication with JWT
+Introduction to Authentication and JWT
+User Registration and Login
+Protecting Routes with JWT
+Hands-On: Add Authentication to an API
+Practice: Test with Postman
+Day 11: HTML and CSS Basics
+HTML5 Structure and Semantics
+CSS: Flexbox, Grid, and Responsive Design
+Styling Best Practices
+Hands-On: Build a Static Landing Page
+Practice: Make it Responsive
+Day 12: JavaScript in the Browser
+DOM Manipulation and Events
+Fetch API for HTTP Requests
+Error Handling in Frontend
+Hands-On: Create an Interactive Form
+Practice: Fetch Data from an API
+Day 13: Introduction to React
+What is React? (Components, JSX)
+Setting up a React Project with Create React App
+Building Functional Components
+Hands-On: Create a Simple React App
+Practice: Add Multiple Components
+Day 14: Weekly Review and Mini Project
+Recap of Week 2
+Troubleshooting Backend-API Issues
+Mini Project: Build a User Management API with Authentication
+
+Week 3: Frontend Development with React
+Day 15: React State and Props
+Managing State with useState
+Passing Data with Props
+Conditional Rendering
+Hands-On: Build a To-Do List App
+Practice: Add Delete Functionality
+Day 16: React Hooks
+useEffect for Side Effects
+Custom Hooks
+Handling Forms with React
+Hands-On: Fetch Data with useEffect
+Practice: Create a Custom Hook
+Day 17: React Routing
+Introduction to React Router
+Setting up Routes and Navigation
+Dynamic Routing with Parameters
+Hands-On: Build a Multi-Page App
+Practice: Add Protected Routes
+Day 18: State Management with Context
+Context API Basics
+Managing Global State
+Avoiding Prop Drilling
+Hands-On: Share State Across Components
+Practice: Add User Authentication State
+Day 19: Connecting React with Backend
+Consuming REST APIs in React
+Axios for HTTP Requests
+Displaying Data Dynamically
+Hands-On: Connect React to an Express API
+Practice: Add CRUD Functionality
+Day 20: Styling in React
+CSS Modules and Styled-Components
+Using Bootstrap or Tailwind with React
+Responsive Design in React
+Hands-On: Style a React App
+Practice: Add Animations
+Day 21: Weekly Review and Mini Project
+Recap of Week 3
+Debugging Frontend-Backend Integration
+Mini Project: Build a Task Manager App with MERN Stack
+
+Week 4: Full-Stack Integration and Deployment
+Day 22: Version Control with Git
+Git Basics (commit, push, pull, branch)
+GitHub Workflows and Collaboration
+Resolving Merge Conflicts
+Hands-On: Push a Project to GitHub
+Practice: Collaborate on a Repo
+Day 23: Full-Stack Project – Part 1
+Planning a MERN Stack Application
+Backend: Express.js with MongoDB
+Setting up API Endpoints
+Hands-On: Build the Backend Structure
+Practice: Test with Postman
+Day 24: Full-Stack Project – Part 2
+Frontend: React with Routing and State
+Integrating Frontend with Backend APIs
+Real-Time Updates with React
+Hands-On: Connect and Style the Frontend
+Practice: Add User Interactions
+Day 25: Testing and Debugging
+Unit Testing with Jest (React)
+Testing APIs with Postman
+Debugging Tools and Techniques
+Hands-On: Test a MERN App
+Practice: Fix Bugs
+Day 26: Deployment Basics
+Preparing a MERN App for Deployment
+Deploying Backend to Heroku
+Deploying Frontend to Netlify
+Hands-On: Deploy a Sample App
+Practice: Configure Environment Variables
+Day 27: Final Project Work
+Completing the MERN Stack Application
+Code Review, Optimization, and Documentation
+End-to-End Testing
+Hands-On: Finalize and Polish Project
+Day 28: Program Wrap-Up
+Presentation of Final Projects
+Peer Feedback and Q&A Session
+Certification and Career Guidance
+
+Learning Outcomes
+By the end of this program, participants will be able to:
+Write modern JavaScript code with ES6+ features.
+Build RESTful APIs with Node.js, Express.js, and MongoDB.
+Develop dynamic, responsive frontends with React.
+Integrate frontend and backend in a full-stack MERN application.
+Deploy MERN applications to production environments.
+
