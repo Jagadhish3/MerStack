@@ -179,16 +179,106 @@ console.log(promise);
 6. Update wallet
 */
 
+// const login = () =>
+//   new Promise((res, rej) => {
+//     console.log("User Logged in");
+//     rej();
+//   });
+
+// const addItemToCart = () =>
+//   new Promise((res, rej) => {
+//     console.log("Added items to cart");
+//     res();
+//   });
+
+// const createOrder = () =>
+//   new Promise((res, rej) => {
+//     console.log("Order creation");
+//     res();
+//   });
+
+// const payOrder = () =>
+//   new Promise((res, rej) => {
+//     console.log("Payment Done..");
+//     res();
+//   });
+// const createOrderSummary = () =>
+//   new Promise((res, rej) => {
+//     console.log("Created Order Summary");
+//     res();
+//   });
+
+// function updateWallet() {
+//   console.log("Update wallet");
+// }
+
+// login()
+//   .then(() => {
+//     addItemToCart()
+//       .then(() => {
+//         createOrder()
+//           .then(() => {
+//             payOrder()
+//               .then(() => {
+//                 createOrderSummary()
+//                   .then(() => {
+//                     updateWallet();
+//                   })
+//                   .catch(() => console.error("Order summary failed!"));
+//               })
+//               .catch(() => console.error("Payment failed!"));
+//           })
+//           .catch(() => console.error("Create order failed!"));
+//       })
+//       .catch(() => console.error("Cart Items add failed!"));
+//   })
+//   .catch(() => console.error("user Login failed!"));
+
+
+//NOTE - Promise.all
+
+// async function userBehaviour() {
+//   const login = new Promise((res, rej) => {
+//     console.log("Login success");
+//     res({ name: "Munit" });
+//   });
+//   const addItemToCart = new Promise((res, rej) => {
+//     console.log("Item Added to Cart");
+//     res("failed added item ");
+//   });
+//   const createOrder = new Promise((res, rej) => {
+//     console.log("Order create successfully!");
+//     res();
+//   });
+//   Promise.all([login, addItemToCart, createOrder])
+//     .then((data) => {
+//       console.log("promise run successfully!", data);
+//     })
+//     .catch((err) => console.log("failed!", err));
+// }
+
+//NOTE - Async Await
+
+/*
+1. User Login
+2. Add items to cart
+3. Create Order
+4. Pay order
+5. Create Order summary
+6. Update wallet
+
+*/
+
 const login = () =>
   new Promise((res, rej) => {
     console.log("User Logged in");
-    rej();
+    res({ name: "sriram" });
   });
 
 const addItemToCart = () =>
   new Promise((res, rej) => {
     console.log("Added items to cart");
-    res();
+    rej("Failed to add item in cart!");
   });
 
 const createOrder = () =>
@@ -212,24 +302,17 @@ function updateWallet() {
   console.log("Update wallet");
 }
 
-login()
-  .then(() => {
-    addItemToCart()
-      .then(() => {
-        createOrder()
-          .then(() => {
-            payOrder()
-              .then(() => {
-                createOrderSummary()
-                  .then(() => {
-                    updateWallet();
-                  })
-                  .catch(() => console.error("Order summary failed!"));
-              })
-              .catch(() => console.error("Payment failed!"));
-          })
-          .catch(() => console.error("Create order failed!"));
-      })
-      .catch(() => console.error("Cart Items add failed!"));
-  })
-  .catch(() => console.error("user Login failed!"));
+async function userBehaviour() {
+  try {
+    await login();
+    await addItemToCart();
+    await createOrder();
+    await payOrder();
+    await createOrderSummary();
+    updateWallet();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+userBehaviour();

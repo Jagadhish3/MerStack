@@ -1,0 +1,64 @@
+ GIT COMMANDS WITH DEFINITIONS
+git --version
+👉 Displays the installed version of Git to verify that it is installed.
+
+git config --list
+👉 Shows the Git configuration including user name, email, and other settings.
+
+git init
+👉 Initializes a new Git repository in the current directory.
+
+git status
+👉 Shows the status of files:
+
+Untracked – Git is not tracking the file.
+
+Staged – File is added to staging area.
+
+Committed – File changes are saved in the local repository.
+
+git add <file_name>
+👉 Adds a specific file to the staging area.
+
+git add .
+👉 Adds all modified and new files in the current directory to the staging area.
+
+git commit -m "your message"
+👉 Commits the staged changes with a message describing what was changed.
+
+git remote add origin <repository_URL>
+👉 Links your local Git repo to a remote GitHub repository named origin.
+
+git remote -v
+👉 Lists all remote repositories linked to your project.
+
+git branch -M <branch_name>
+👉 Creates a new branch or renames the current branch to <branch_name>.
+
+git branch
+👉 Lists all branches in the current repository and highlights the current branch.
+
+git push -u origin <branch_name>
+👉 Pushes the local branch to the remote origin and sets upstream tracking.
+
+git clone <repository_URL>
+👉 Clones a repository from GitHub (or any remote) to your local machine.
+
+git log
+👉 Shows the full commit history with details like author, date, and commit message.
+
+git log --oneline
+👉 Shows the commit history in a compact one-line format per commit.
+
+git pull origin <branch_name>
+👉 Fetches changes from the remote branch and merges them into your local branch.
+
+git checkout -b <new_branch>
+👉 Creates and switches to a new branch.
+
+git checkout <branch_name>
+👉 Switches to an existing branch.
+
+git reset --hard <commit_hash>
+👉 Resets your current branch to a specific commit.
+❗ All changes after that commit will be permanently lost (hard reset).
