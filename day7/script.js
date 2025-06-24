@@ -50,51 +50,51 @@
 
 */
 
-function login(cb) {
-  console.log("User Logged in");
-  cb();
-}
+// function login(cb) {
+//   console.log("User Logged in");
+//   cb();
+// }
 
-function addItemToCart(cb) {
-  console.log("Added items to cart");
-  cb();
-}
+// function addItemToCart(cb) {
+//   console.log("Added items to cart");
+//   cb();
+// }
 
-function createOrder(cb) {
-  console.log("order creation");
-  cb();
-}
+// function createOrder(cb) {
+//   console.log("order creation");
+//   cb();
+// }
 
-function payOrder(cb) {
-  console.log("Payment Done..");
-  cb();
-}
+// function payOrder(cb) {
+//   console.log("Payment Done..");
+//   cb();
+// }
 
-function createOrderSummary(cb) {
-  console.log("Created Order Summary");
-  cb();
-}
+// function createOrderSummary(cb) {
+//   console.log("Created Order Summary");
+//   cb();
+// }
 
-function updateWallet() {
-  console.log("Update wallet");
-}
+// function updateWallet() {
+//   console.log("Update wallet");
+// }
 
-login(()=> addItemToCart(()=>createOrder(()=>payOrder(()=>createOrderSummary(()=>updateWallet())))));
+// login(()=> addItemToCart(()=>createOrder(()=>payOrder(()=>createOrderSummary(()=>updateWallet())))));
 
-//Note- Promises -It is a object/placeholder which sows eventual completion or failure of asynchronous code.
+// //Note- Promises -It is a object/placeholder which sows eventual completion or failure of asynchronous code.
 
-function createOrder(){
-  console.log("Order created successfully!");
-}
+// function createOrder(){
+//   console.log("Order created successfully!");
+// }
 
-const promise=new Promise((resolve,reject) =>{
-  setTimeout(()=>{
-    createOrder();
-    reject();
-  },2000);
-});
+// const promise=new Promise((resolve,reject) =>{
+//   setTimeout(()=>{
+//     createOrder();
+//     reject();
+//   },2000);
+// });
 
-console.log(promise);
+// console.log(promise);
 
 
 //NOTE - Promises
