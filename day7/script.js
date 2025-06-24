@@ -125,47 +125,111 @@ console.log(promise);
 4. Pay order
 5. Create Order summary
 6. Update wallet
-
 */
 
-const login = new Promise((res, rej) => {
-  console.log("User Logged in");
-  res();
-});
+// const login = new Promise((res, rej) => {
+//   console.log("User Logged in");
+//   res();
+// });
 
-const addItemToCart = new Promise((res, rej) => {
-  console.log("Added items to cart");
-  res();
-});
+// const addItemToCart = new Promise((res, rej) => {
+//   console.log("Added items to cart");
+//   res();
+// });
 
-const createOrder = new Promise((res, rej) => {
-  console.log("Order creation");
-  res();
-});
+// const createOrder = new Promise((res, rej) => {
+//   console.log("Order creation");
+//   res();
+// });
 
-const payOrder = new Promise((res, rej) => {
-  console.log("Payment Done..");
-  res();
-});
-const createOrderSummary = new Promise((res, rej) => {
-  console.log("Created Order Summary");
-  res();
-});
+// const payOrder = new Promise((res, rej) => {
+//   console.log("Payment Done..");
+//   res();
+// });
+// const createOrderSummary = new Promise((res, rej) => {
+//   console.log("Created Order Summary");
+//   res();
+// });
+
+// function updateWallet() {
+//   console.log("Update wallet");
+// }
+
+// login.then(() => {
+//   addItemToCart.then(() => {
+//     createOrder.then(() => {
+//       payOrder.then(() => {
+//         createOrderSummary.then(() => {
+//           updateWallet();
+//         });
+//       });
+//     });
+//   });
+// });
+
+//Inversion of control
+//LINK - Callback hell via promise
+
+/*
+1. User Login
+2. Add items to cart
+3. Create Order
+4. Pay order
+5. Create Order summary
+6. Update wallet
+*/
+
+const login = () =>
+  new Promise((res, rej) => {
+    console.log("User Logged in");
+    rej();
+  });
+
+const addItemToCart = () =>
+  new Promise((res, rej) => {
+    console.log("Added items to cart");
+    res();
+  });
+
+const createOrder = () =>
+  new Promise((res, rej) => {
+    console.log("Order creation");
+    res();
+  });
+
+const payOrder = () =>
+  new Promise((res, rej) => {
+    console.log("Payment Done..");
+    res();
+  });
+const createOrderSummary = () =>
+  new Promise((res, rej) => {
+    console.log("Created Order Summary");
+    res();
+  });
 
 function updateWallet() {
   console.log("Update wallet");
 }
 
-login.then(() => {
-  addItemToCart.then(() => {
-    createOrder.then(() => {
-      payOrder.then(() => {
-        createOrderSummary.then(() => {
-          updateWallet();
-        });
-      });
-    });
-  });
-});
-
-//Inversion of control
+login()
+  .then(() => {
+    addItemToCart()
+      .then(() => {
+        createOrder()
+          .then(() => {
+            payOrder()
+              .then(() => {
+                createOrderSummary()
+                  .then(() => {
+                    updateWallet();
+                  })
+                  .catch(() => console.error("Order summary failed!"));
+              })
+              .catch(() => console.error("Payment failed!"));
+          })
+          .catch(() => console.error("Create order failed!"));
+      })
+      .catch(() => console.error("Cart Items add failed!"));
+  })
+  .catch(() => console.error("user Login failed!"));
