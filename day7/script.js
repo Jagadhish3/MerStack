@@ -80,3 +80,92 @@ function updateWallet() {
 }
 
 login(()=> addItemToCart(()=>createOrder(()=>payOrder(()=>createOrderSummary(()=>updateWallet())))));
+
+//Note- Promises -It is a object/placeholder which sows eventual completion or failure of asynchronous code.
+
+function createOrder(){
+  console.log("Order created successfully!");
+}
+
+const promise=new Promise((resolve,reject) =>{
+  setTimeout(()=>{
+    createOrder();
+    reject();
+  },2000);
+});
+
+console.log(promise);
+
+
+//NOTE - Promises
+
+//Defination
+// Promise is an object which stores eventual completion or failure
+//  of an asynchronous code
+
+// function createOrder() {
+//   console.log("Order created successfully!");
+// }
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     createOrder();
+//     resolve();
+//   }, 2000);
+// });
+
+// console.log(promise);
+
+//LINK - Callback hell via promise
+
+/*
+1. User Login
+2. Add items to cart
+3. Create Order
+4. Pay order
+5. Create Order summary
+6. Update wallet
+
+*/
+
+const login = new Promise((res, rej) => {
+  console.log("User Logged in");
+  res();
+});
+
+const addItemToCart = new Promise((res, rej) => {
+  console.log("Added items to cart");
+  res();
+});
+
+const createOrder = new Promise((res, rej) => {
+  console.log("Order creation");
+  res();
+});
+
+const payOrder = new Promise((res, rej) => {
+  console.log("Payment Done..");
+  res();
+});
+const createOrderSummary = new Promise((res, rej) => {
+  console.log("Created Order Summary");
+  res();
+});
+
+function updateWallet() {
+  console.log("Update wallet");
+}
+
+login.then(() => {
+  addItemToCart.then(() => {
+    createOrder.then(() => {
+      payOrder.then(() => {
+        createOrderSummary.then(() => {
+          updateWallet();
+        });
+      });
+    });
+  });
+});
+
+//Inversion of control
