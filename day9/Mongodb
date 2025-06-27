@@ -1,0 +1,67 @@
+//MongoDB class1
+Data Base :- a data base is a organised collection of data that can be easily accessed , managed and updated.
+Tables with defined schema
+strong ACID compliance (Atomicity, Consistency,Isolation,Durability)
+ideal for: 
+financial System
+Inventory systems
+Appliances needing complex JOINs
+
+Important concepts:
+primary key
+foreign key
+normalization
+
+Types of Databases?
+databases are primarily two Types
+1.Relational Databases(SQL)
+    stored data in tables (rows and coloumns)
+    tables can be related using keys
+    use SQL to manage data
+    eg = MySQL , portgreSQL ,  SQLite , microsoft SQL server
+2.Non-Relational Databases(NoSQL)
+    stored data in JSON-like documnents,key-value pairs, graphs etc
+    No fixed Schema-great for flexibility and scalability
+    eg = MongoDB, Cassandra, Redis, Firebase
+
+1. Relational Databases
+Data Is stored in tables (lIke Excel spreadsheets)
+    Tables with defined schema
+    Strong ACID compliance (Atomicity, Consistency, Isolation, Durability)
+    Ideal for:
+        * Financial systems
+        * Inventory systems
+        * Applications needing complex JOINs
+    Important Concepts:
+        * Primary Key
+        * Foreign Key
+        * Normalization
+        * Relationships: One-to-One, One-to-Many, Many-to-Many 
+    Pros:
+        * Strong data consistency
+        * Powerful querying with SOL
+        * Good for complex relationships
+    Cons:
+        * Rigid schema
+        * Scaling horizontally Is harder
+
+2. Non-Relational Databases?
+Data is stored in flexible formats, most commonly documents (lIke JSON).
+eg:
+{
+    "name":"sidhish",
+    "email":"sidhish@example.com",
+    "role" : "Tech"
+}
+Store data in flexible formats lIke:
+    * Documents (MongoDB)
+    * Key-Value Pairs (Redis)
+    * Graphs (Neo4j)
+    * Wide Column Stores (Cassandra)
+Pros:
+    * Flexible schema (easy to evolve)
+    * Scales easily for large apps
+    * Stores nested and complex data directly
+Cons:
+    * Less strict data consistency (eventual consistency in distributed systems)
+    * Queries can be less powerful for complex joins

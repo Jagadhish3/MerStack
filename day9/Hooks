@@ -1,0 +1,36 @@
+HOOKS -:
+hooks are special functions in react that let you "hook into" React features like state, lifeCycle, and context- with out using class 
+
+Why were hooks introduced?
+Before hooks, to manage things like satate or lifecycle methods(eg)
+
+
+
+introduction to Component State:
+Def : state is like a memory for a component
+it stores data that can change over time, and when it changes, the component Re-Renders(updates on the screen)
+Rendering : the changes that have made in the virtual dom reflects in the dom it is called rendering
+
+React components utilize two primary mechanisms to influence what is displayed on the screen:
+
+
+PROPS vs STATE 
+| Feature                | **Props**                      | **State**                           |
+| ---------------------- | ------------------------------ | ----------------------------------- |
+| ✅ What is it?        |Data passed from parent to child | Data managed inside a component    |
+| 🔁 Changeable?         | **Immutable** (read-only)      | **Mutable** (can be updated)        |
+| 📦 Who sets it?        | Set by **parent component**    | Set by the **component itself**     |
+| 🔁 Used for?           | Configuring a component        | Tracking and reacting to changes    |
+| 🔄 Triggers re-render? | Yes, when changed by parent    | Yes, when changed via `setState()`  |
+
+🔁 What is Props Drilling?
+Props Drilling is when you pass data (props) from a top-level component to a deeply nested child component, 
+going through several intermediate components that don’t actually use the data—just pass it along.
+
+syntax of useState:-
+useState is an object which has an variable and to change the varible it has a function
+const[stateVariable, setStateFunction] = useState(initialValue);
+1.stateVariable = current state value
+2.setStateFunction = it updates the value
+3.useState = intital value 
+

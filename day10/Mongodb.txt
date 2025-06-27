@@ -1,0 +1,507 @@
+/*Microsoft Windows [Version 10.0.26100.4349]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\System32>net start MongoDB
+The requested service has already been started.
+
+test> show dbs
+admin             40.00 KiB
+assignment_db     20.00 KiB
+config            72.00 KiB
+expense-tracker   72.00 KiB
+local             40.00 KiB
+myAppDB          132.00 KiB
+test> db
+test
+test> use colleges
+switched to db colleges
+colleges> use ecommerce
+switched to db ecommerce
+ecommerce> use expense-tracker
+switched to db expense-tracker
+expense-tracker> show collections
+expenses
+expense-tracker> use assignment_db
+switched to db assignment_db
+assignment_db> show collections
+posts
+users
+assignment_db> db.users.find()
+
+assignment_db> db.posts.find()
+
+assignment_db> db.posts.find().pretty()
+
+assignment_db> show dbs
+admin             40.00 KiB
+assignment_db     20.00 KiB
+config            96.00 KiB
+expense-tracker   72.00 KiB
+local             40.00 KiB
+myAppDB          132.00 KiB
+assignment_db> use myAppDB
+switched to db myAppDB
+myAppDB> show collections
+posts
+users
+myAppDB> db.users.find()
+[
+  {
+    _id: ObjectId('685bfbb00e674daad0d66341'),
+    name: 'Ram',
+    email: 'Ram@gmail.com',
+    password: '$2b$10$FK/Hv8DjYjnlQ5w6BMeepOeqFQ5/WDK5Tk3emnhmBU5I5oxn8lybS',
+    createdAt: ISODate('2025-06-25T13:37:52.381Z'),
+    updatedAt: ISODate('2025-06-25T13:37:52.381Z'),
+    __v: 0
+  }
+]
+myAppDB> use assignment_db
+switched to db assignment_db
+assignment_db> db.dropDatabase()
+{ ok: 1, dropped: 'assignment_db' }
+assignment_db> use colleges
+switched to db colleges
+colleges> show dbs
+admin             40.00 KiB
+config            96.00 KiB
+expense-tracker   72.00 KiB
+local             40.00 KiB
+myAppDB          132.00 KiB
+colleges> db
+colleges
+colleges> show collections
+
+colleges> db.createCollection("students")
+{ ok: 1 }
+colleges> show dbs
+admin             40.00 KiB
+colleges           8.00 KiB
+config            96.00 KiB
+expense-tracker   72.00 KiB
+local             40.00 KiB
+myAppDB          132.00 KiB
+colleges> use jaga
+switched to db jaga
+jaga> show dbs
+admin             40.00 KiB
+colleges           8.00 KiB
+config            96.00 KiB
+expense-tracker   72.00 KiB
+local             40.00 KiB
+myAppDB          132.00 KiB
+jaga> use colleges
+switched to db colleges
+colleges> show dbs
+admin             40.00 KiB
+colleges           8.00 KiB
+config            96.00 KiB
+expense-tracker   72.00 KiB
+local             40.00 KiB
+myAppDB          132.00 KiB
+colleges> show colloections
+MongoshInvalidInputError: [COMMON-10001] 'colloections' is not a valid argument for "show".
+colleges> show collections
+students
+colleges> db.students.insertOne({"name":"Jagadhish","experince":3})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685e23315ec9aca55b748a5f')
+}
+colleges> db.students.find()
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experince: 3
+  }
+]
+colleges> db.students.findOne()
+{
+  _id: ObjectId('685e23315ec9aca55b748a5f'),
+  name: 'Jagadhish',
+  experince: 3
+}
+colleges> db.students.insertOne({"name":"Ram","experience":4})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685e27545ec9aca55b748a60')
+}
+colleges> db.students.findOne()
+{
+  _id: ObjectId('685e23315ec9aca55b748a5f'),
+  name: 'Jagadhish',
+  experince: 3
+}
+colleges> db.students.find()
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experince: 3
+  },
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  }
+]
+colleges> db.students.insertMany([{"name":"Ravi","experience":4},{"name":"Ragav","experince":5}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685e27f65ec9aca55b748a61'),
+    '1': ObjectId('685e27f65ec9aca55b748a62')
+  }
+}
+colleges> db.students.find()
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experince: 3
+  },
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experince: 5
+  }
+]
+colleges> db.students.findOne()
+{
+  _id: ObjectId('685e23315ec9aca55b748a5f'),
+  name: 'Jagadhish',
+  experince: 3
+}
+colleges> db.students.findTwo()
+TypeError: db.students.findTwo is not a function
+colleges> db.students.find({name:"Ragav"})
+[
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experince: 5
+  }
+]
+colleges> db.students.findOne({name:"Ragav"})
+{
+  _id: ObjectId('685e27f65ec9aca55b748a62'),
+  name: 'Ragav',
+  experince: 5
+}
+colleges> db.students.findOne({name:"Ragav",experience:6})
+null
+colleges> db.students.findOne({name:"Ragava"})
+null
+colleges> db.students.find({name:"Ragava"})
+
+colleges> db.students.find({experience:3})
+
+colleges> db.students.findOne({experience:3})
+null
+colleges> db.students.findOne({}).count()
+TypeError: db.students.findOne({}).count is not a function
+colleges> db.students.find({}).count()
+4
+colleges>
+
+*/
+}
+colleges> db.students.findTwo()
+TypeError: db.students.findTwo is not a function
+colleges> db.students.find({name:"Ragav"})
+[
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experince: 5
+  }
+]
+colleges> db.students.findOne({name:"Ragav"})
+{
+  _id: ObjectId('685e27f65ec9aca55b748a62'),
+  name: 'Ragav',
+  experince: 5
+}
+colleges> db.students.findOne({name:"Ragav",experience:6})
+null
+colleges> db.students.findOne({name:"Ragava"})
+null
+colleges> db.students.find({name:"Ragava"})
+
+colleges> db.students.find({experience:3})
+
+colleges> db.students.findOne({experience:3})
+null
+colleges> db.students.findOne({}).count()
+TypeError: db.students.findOne({}).count is not a function
+colleges> db.students.find({}).count()
+4
+colleges> db.students.find({experience:4})
+[
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 4
+  }
+]
+colleges> db.students.find({experience:{$lt:5}})
+[
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 4
+  }
+]
+colleges> db.students.find({experince:{$lt:4}})
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experince: 3
+  }
+]
+colleges> db.students.find({experince:{$lt:5}})
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experince: 3
+  }
+]
+colleges> db.students.find({experince:{$lt:6}})
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experince: 3
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experince: 5
+  }
+]
+colleges> db.students.find({experince:{$gte:4}})
+[
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experince: 5
+  }
+]
+colleges> db.students.find({experince:{$eq:4}})
+
+colleges> db.students.find({experience:{$eq:4}})
+[
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 4
+  }
+]
+colleges> db.students.findMany({experince:{$exists:true}},{$rename:{"experince":"experience"}})
+TypeError: db.students.findMany is not a function
+colleges> db.students.updateMany({experince:{$exists:true}},{$rename:{"experince":"experience"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+colleges> db.students.find({experience:{$gte:2}})
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experience: 3
+  },
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experience: 5
+  }
+]
+colleges> db.students.find({name:{$in:["Ravi","Ram"]}})
+[
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 4
+  }
+]
+colleges> db.students.updateOne({_id:ObjectId("685e27f65ec9aca55b748a61")},{$set:{experience:6}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+colleges> db.students.updateMany({experience:{$gte:5}},{$set:{subject:["MERN","DSA"]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+colleges> db.students.find()
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experience: 3
+  },
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experience: 5,
+    subject: [ 'MERN', 'DSA' ]
+  }
+]
+colleges> db.students.find(name:"Ram"},{})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:21)
+
+> 1 | db.students.find(name:"Ram"},{})
+    |                      ^
+  2 |
+
+colleges> db.students.find({name:"Ram"},{})
+[
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 4
+  }
+]
+colleges> db.students.updateOne({name:"Ram"},{})
+MongoInvalidArgumentError: Update document requires atomic operators
+colleges> db.students.updateOne({name:"Ram"},{$set:{experience:3,subject:["Game Development"]}},{upsert:true})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+colleges> db.students.find()
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experience: 3
+  },
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 3,
+    subject: [ 'Game Development' ]
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experience: 5,
+    subject: [ 'MERN', 'DSA' ]
+  }
+]
+colleges> db.students.updateOne({name:"Sidhish"},{$set:{experience:3,subject:["Game Development"]}},{upsert:true})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685e382785314c0b2cfc8cd1'),
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 1
+}
+colleges> db.students.find()
+[
+  {
+    _id: ObjectId('685e23315ec9aca55b748a5f'),
+    name: 'Jagadhish',
+    experience: 3
+  },
+  {
+    _id: ObjectId('685e27545ec9aca55b748a60'),
+    name: 'Ram',
+    experience: 3,
+    subject: [ 'Game Development' ]
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a61'),
+    name: 'Ravi',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e27f65ec9aca55b748a62'),
+    name: 'Ragav',
+    experience: 5,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e382785314c0b2cfc8cd1'),
+    name: 'Sidhish',
+    experience: 3,
+    subject: [ 'Game Development' ]
+  }
+]
+colleges>
