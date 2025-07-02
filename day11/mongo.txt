@@ -1,0 +1,135 @@
+colleges> db.getCollectionInfos({ name: "Students1" })
+[
+  {
+    name: 'Students1',
+    type: 'collection',
+    options: {
+      validator: {
+        '$jsonSchema': {
+          bsonType: 'object',
+          required: [ 'name', 'rollNo', 'year' ],
+          properties: {
+            name: {
+              bsonType: 'string',
+              description: 'Name must be string amd required'
+            },
+            rollNo: {
+              bsonType: 'string',
+              description: 'Roll number must be a string and is required'
+            },
+            year: {
+              bsonType: 'int',
+              minimum: 1,
+              maximum: 5,
+              description: 'Year must be an integer between 1 and 5'
+            },
+            email: {
+              bsonType: 'string',
+              pattern: '^.+@.+$',
+              description: 'Must be a valid email address'
+            },
+            marks: {
+              bsonType: 'object',
+              required: [Array],
+              properties: [Object],
+              description: 'Marks must be an object containing integer scores for maths, physics, and chemistry'
+            },
+            isHosteller: {
+              bsonType: 'bool',
+              description: 'Boolean indicating hostel residency'
+            },
+            cgpa: {
+              bsonType: 'double',
+              minimum: 0,
+              maximum: 10,
+              description: 'CGPA must be a decimal value between 0 and 10'
+            },
+            department: {
+              bsonType: 'string',
+              description: 'Department must be a string'
+            }
+          }
+        }
+      }
+    },
+    info: {
+      readOnly: false,
+      uuid: UUID('888bc8ee-da49-41c8-a717-e97941ef007e')
+    },
+    idIndex: { v: 2, key: { _id: 1 }, name: '_id_' }
+  }
+]
+
+db.runCommand({
+  collMod: "Students1",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "rollNo", "year"],
+      properties: {
+        name: {
+          bsonType: "string",
+          minLength: 10,
+          description: "Name must be a string with at least 10 characters and is required"
+        },
+        rollNo: {
+          bsonType: "string",
+          description: "Roll number must be a string and is required"
+        },
+        year: {
+          bsonType: "int",
+          minimum: 1,
+          maximum: 4,
+          description: "Year must be an integer between 1 and 4"
+        },
+        email: {
+          bsonType: "string",
+          pattern: "^.+@.+$",
+          description: "Must be a valid email address"
+        },
+        marks: {
+          bsonType: "object",
+          required: ["maths", "physics", "chemistry"],
+          properties: {
+            maths: {
+              bsonType: "int",
+              description: "Maths marks must be an integer"
+            },
+            physics: {
+              bsonType: "int",
+              description: "Physics marks must be an integer"
+            },
+            chemistry: {
+              bsonType: "int",
+              description: "Chemistry marks must be an integer"
+            }
+          },
+          description: "Marks must be an object with integer values for maths, physics, and chemistry"
+        },
+        isHosteller: {
+          bsonType: "bool",
+          description: "Boolean indicating hostel residency"
+        },
+        cgpa: {
+          bsonType: "double",
+          minimum: 0,
+          maximum: 10,
+          description: "CGPA must be a decimal value between 0 and 10"
+        },
+        department: {
+          bsonType: "string",
+          enum: ["ECE", "CSE", "MEC"],
+          description: "Department must be one of ECE, CSE, or MEC"
+        }
+      }
+    }
+  },
+  validationLevel: "strict"
+})
+
+
+assignment:
+my requirements are user,videos,likes/dislikes,comments->reply then 
+user:{_id,name,username,email,password,DoB,lastlogin,createdAt}, 
+videos:{_id,title,description,src,thumbnail,likescount,dislikes count,creatorId:(ref  to user ),created At}, 
+likes:{_id,userId,videoId,createdId}

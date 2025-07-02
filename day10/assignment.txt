@@ -1,0 +1,105 @@
+[
+  {
+    "name": "Amit Sharma",
+    "rollNo": "CSE001",
+    "branch": "CSE",
+    "year": 2,
+    "email": "amit.sharma@example.com",
+    "marks": {
+      "maths": 78,
+      "physics": 85,
+      "chemistry": 72
+    },
+    "isHosteller": true
+  },
+  {
+    "name": "Pooja Verma",
+    "rollNo": "ECE002",
+    "branch": "ECE",
+    "year": 3,
+    "email": "pooja.verma@example.com",
+    "marks": {
+      "maths": 67,
+      "physics": 74,
+      "chemistry": 69
+    },
+    "isHosteller": false
+  },
+  {
+    "name": "Rahul Kumar",
+    "rollNo": "ME003",
+    "branch": "ME",
+    "year": 1,
+    "email": "rahul.kumar@example.com",
+    "marks": {
+      "maths": 82,
+      "physics": 79,
+      "chemistry": 88
+    },
+    "isHosteller": true
+  },
+  {
+    "name": "Anjali Singh",
+    "rollNo": "CSE004",
+    "branch": "CSE",
+    "year": 4,
+    "email": "anjali.singh@example.com",
+    "marks": {
+      "maths": 91,
+      "physics": 92,
+      "chemistry": 89
+    },
+    "isHosteller": false
+  }
+]
+
+[
+
+{"name": "sriram",
+ "rollNo": "CSE007",
+     "branch": "CSE",
+   "year": 3,
+   "email": "sriram@example.com",
+ "marks": {
+  "maths": 76,
+  "physics": 68,
+    "chemistry": 89
+ },
+ "isHosteller":false
+},
+
+{"name": "sidhish",
+ "rollNo": "CSE008",
+     "branch": "CSE",
+   "year": 2,
+   "email": "sidhish@example.com",
+ "marks": {
+  "maths": 84,
+  "physics": 62,
+    "chemistry": 91
+ },
+ "isHosteller":false
+}
+]
+
+Create
+Insert a new student into the collection with your own details.
+Add 3 students in one command using insertMany.
+
+Read
+Find all students in the CSE branch.
+Find students who are in 2nd year and are hostellers.
+Find the student who scored more than 90 in Maths.
+Show name and branch of all students (only those fields).
+Count the number of students in CSE branch.
+Get all students sorted by their Physics marks in descending order.
+
+Update
+Update the Chemistry marks of roll number "CSE001" to 80.
+Add a new field cgpa with default value 8.0 to all students.
+Change hosteller status to false for all 4th-year students.
+Rename the field branch to department.
+
+Delete
+Delete the student whose roll number is "ECE002".
+Delete all students who are in 1st year.

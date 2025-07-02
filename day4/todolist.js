@@ -13,8 +13,7 @@ function addTask(){
     const deletebtn=list.querySelector("button");
     deletebtn.add
     taskList.appendChild(list);
-
-
+    
     //Erase inpur text
     document.getElementsByName("Task")[0].value="";
 }
