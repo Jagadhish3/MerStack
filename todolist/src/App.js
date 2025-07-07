@@ -3,7 +3,9 @@ import React from "react";
 // import Form from"./components/Form.js";
 // import Uncontrolled from "./components/Uncontrolled.js";
 // import List from "./components/List.js";
-import Cheating from "./components/Cheating.js";
+// import Draft from "./components/Draft.js";
+// import MemoComp from "./components/MemoComp";
+import RedMultiCounter from "./components/store/multiCounter";
 
 function App() {
   // const [is, setIs] = useState();
@@ -13,7 +15,10 @@ function App() {
        {/* <List/> */}
        {/* { is && <TimeWithEffect/>}
       <button onClick={()=> setIs((prev)=>!prev)}>Update</button> */}
-      <Cheating/>
+      {/* <Cheating/> */}
+      {/* <MemoComp/> */}
+      {/* <Draft/> */}
+      <RedMultiCounter/>
     </div>
   );
 }
